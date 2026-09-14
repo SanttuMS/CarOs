@@ -61,7 +61,7 @@ signals:
 private:
     double m_speed = 0.0;
     double m_batteryLevel = 50.0;
-    DriveMode m_driveMode = DriveMode::Eco;
+    DriveMode m_driveMode = DriveMode::Normal;
     double m_temperature = 20.0;
 
 };
