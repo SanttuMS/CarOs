@@ -1,6 +1,8 @@
 #pragma once
 #include <QObject>
 #include <QString>
+#include <QDateTime>
+#include <QDebug>
 
 class Vehicle : public QObject
 {
@@ -14,6 +16,9 @@ class Vehicle : public QObject
     Q_PROPERTY(QString driveModeText READ driveModeText NOTIFY driveModeChanged)
     Q_PROPERTY(double temperature READ temperature WRITE setTemperature NOTIFY temperatureChanged)
 
+    Q_INVOKABLE void setEcoMode();
+    Q_INVOKABLE void setNormalMode();
+    Q_INVOKABLE void setSportMode();
 
 public:
 
@@ -32,7 +37,7 @@ public:
 
 
 
-    //Variables
+    //Getters&setters
     double speed() const;
     void setSpeed(double speed);
 

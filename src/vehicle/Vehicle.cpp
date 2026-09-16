@@ -67,6 +67,21 @@ void Vehicle::setDriveMode(DriveMode driveMode)
     emit driveModeChanged();
 }
 
+void Vehicle::setEcoMode()
+{
+    setDriveMode(DriveMode::Eco);
+}
+
+void Vehicle::setNormalMode()
+{
+    setDriveMode(DriveMode::Normal);
+}
+
+void Vehicle::setSportMode()
+{
+    setDriveMode(DriveMode::Sport);
+}
+
 QString Vehicle::driveModeText() const
 {
 

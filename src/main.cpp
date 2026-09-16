@@ -3,6 +3,7 @@
 #include <QQmlContext>
 #include <QTimer>
 
+
 #include "vehicle/Vehicle.h"
 
 
@@ -44,9 +45,10 @@ int main(int argc, char *argv[])
 
     });
 
-    qDebug() << "Drive mode:" << static_cast<int>(vehicle.driveMode());
+    //Debug for drivemode selected
+    //qDebug() << "Drive mode:" << static_cast<int>(vehicle.driveMode());
 
-    //Setting timer and logic to drain battery level according to drivemode
+    //Setting timer and logic for drain battery level according to drivemode
     QObject::connect(&timer, &QTimer::timeout, [&vehicle, &accelerating]()
     {
         if(accelerating && vehicle.driveMode() == Vehicle::DriveMode::Eco)
@@ -64,6 +66,9 @@ int main(int argc, char *argv[])
     });
 
     timer.start(1000);
+
+
+
 
 
     //GIVE QML  OOP "VEHICLE" FOR USE
