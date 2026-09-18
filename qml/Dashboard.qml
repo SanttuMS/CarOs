@@ -24,14 +24,19 @@ Item {
     }
 
     Component.onCompleted: {
+
         const now = new Date()
 
         currentTime = Qt.formatTime(now, "HH:mm:ss")
         currentDate = Qt.formatDate(now, "dd.MM.yyyy")
     }
 
+
+
     ColumnLayout {
-        anchors.centerIn: parent
+        anchors.top: parent.top
+        anchors.right: parent.right
+        anchors.margins: 5
         spacing: 16
 
 
@@ -39,15 +44,23 @@ Item {
             text: root.currentTime
             color: root.textColor
             font.pixelSize: 28
-            Layout.alignment: Qt.AlignHCenter
+            Layout.alignment: Qt.AlignRight
         }
 
         Label {
             text: root.currentDate
             color: root.textColor
             font.pixelSize: 20
-            Layout.alignment: Qt.AlignHCenter
+            Layout.alignment: Qt.AlignRight
+
         }
+    }
+
+
+    ColumnLayout {
+        anchors.centerIn: parent
+        spacing: 16
+
 
         Label {
             text: vehicle.speed + " km/h"
@@ -82,18 +95,44 @@ Item {
             spacing: 12
 
             Button {
+                id: ecoButton
                 text: "ECO"
-                onClicked: vehicle.driveMode = Vehicle.Eco
+                onClicked: vehicle.setEcoMode()
+
+                background: Rectangle {
+                    // corners
+                    radius: 8
+                    // button highligting - condition ? valueIfTrue : valueIfFalse
+                    color: vehicle.driveModeText === "ECO"
+                           ? "#4caf50"
+                           : "#444444"
+                }
             }
 
             Button {
+                id: normalButton
                 text: "NORMAL"
-                onClicked: vehicle.driveMode = Vehicle.Normal
+                onClicked: vehicle.setNormalMode()
+
+                background: Rectangle {
+                    radius: 8
+                    color: vehicle.driveModeText === "NORMAL"
+                           ? "#2196f3"
+                           : "#444444"
+                }
             }
 
             Button {
+                id: sportButton
                 text: "SPORT"
-                onClicked: vehicle.driveMode = Vehicle.Sport
+                onClicked: vehicle.setSportMode()
+
+                background: Rectangle {
+                    radius: 8
+                    color: vehicle.driveModeText === "SPORT"
+                           ? "#f44336"
+                           : "#444444"
+                }
             }
         }
     }

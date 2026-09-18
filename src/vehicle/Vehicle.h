@@ -7,6 +7,7 @@
 class Vehicle : public QObject
 {
 
+
     Q_OBJECT
 
     //Tells QT that these objects have properties
@@ -16,9 +17,6 @@ class Vehicle : public QObject
     Q_PROPERTY(QString driveModeText READ driveModeText NOTIFY driveModeChanged)
     Q_PROPERTY(double temperature READ temperature WRITE setTemperature NOTIFY temperatureChanged)
 
-    Q_INVOKABLE void setEcoMode();
-    Q_INVOKABLE void setNormalMode();
-    Q_INVOKABLE void setSportMode();
 
 public:
 
@@ -30,6 +28,13 @@ public:
         Sport
     };
     Q_ENUM(DriveMode)
+
+
+
+    //Macro that exposes public method to qml
+    Q_INVOKABLE void setEcoMode();
+    Q_INVOKABLE void setNormalMode();
+    Q_INVOKABLE void setSportMode();
 
     //Constructor
     explicit Vehicle(QObject *parent = nullptr);

@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Basic
 
+
 ApplicationWindow {
     id: window
     width: 640
@@ -30,7 +31,7 @@ ApplicationWindow {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 
-                textColor: window.Lightmode
+                textColor: window.lightmode
                             ?window.dark
                             :window.light
 

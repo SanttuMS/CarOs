@@ -11,9 +11,10 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
+    Vehicle vehicle;
+
     QQmlApplicationEngine engine;
 
-    Vehicle vehicle;
     vehicle.setSpeed(40.0);
     vehicle.setBatteryLevel(72.0);
     vehicle.setDriveMode(Vehicle::DriveMode::Normal);
