@@ -5,6 +5,7 @@
 
 
 #include "vehicle/Vehicle.h"
+#include "media/Media.h"
 
 
 int main(int argc, char *argv[])
@@ -12,6 +13,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     Vehicle vehicle;
+    Media   media;
 
     QQmlApplicationEngine engine;
 
