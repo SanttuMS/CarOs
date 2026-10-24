@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     Vehicle vehicle;
-    Media   media;
+    Media media;
 
     QQmlApplicationEngine engine;
 

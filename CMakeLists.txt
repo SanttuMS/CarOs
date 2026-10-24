@@ -18,6 +18,10 @@ qt_add_executable(appCarOs
     src/main.cpp
     src/vehicle/Vehicle.cpp
     src/vehicle/Vehicle.h
+    src/media/Media.h
+    src/media/Media.cpp
+    src/navigation/Navigation.cpp
+    src/navigation/Navigation.h
 )
 
 qt_add_qml_module(appCarOs

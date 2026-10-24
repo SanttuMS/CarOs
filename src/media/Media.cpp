@@ -46,3 +46,18 @@ void Media::setMediaMode(MediaMode mediaMode)
     m_mediaMode = mediaMode;
     emit mediaModeChanged();
 }
+
+void Media::setTuner()
+{
+    setMediaMode(MediaMode::Tuner);
+}
+
+void Media::setBluetooth()
+{
+    setMediaMode(MediaMode::Bluetooth);
+}
+
+void Media::setSpotify()
+{
+    setMediaMode(MediaMode::Spotify);
+}

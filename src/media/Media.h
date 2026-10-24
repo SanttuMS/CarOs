@@ -7,7 +7,11 @@ class Media : public QObject
 {
 
 
-    //QObject
+    Q_OBJECT
+
+    Q_PROPERTY(int track READ track WRITE setTrack NOTIFY trackChanged)
+    Q_PROPERTY(int  volume READ volume WRITE setVolume NOTIFY volumeChanged)
+    Q_PROPERTY(MediaMode mediaMode READ mediaMode WRITE setMediaMode NOTIFY mediaModeChanged)
 
 public:
 
@@ -19,6 +23,10 @@ public:
 
     };
     Q_ENUM(MediaMode)
+
+    Q_INVOKABLE void setTuner();
+    Q_INVOKABLE void setSpotify();
+    Q_INVOKABLE void setBluetooth();
 
 
 
