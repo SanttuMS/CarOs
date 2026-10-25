@@ -43,16 +43,16 @@ public:
 
 
 
-private:
-    int m_track;
-    int m_volume;
-    MediaMode m_mediaMode = MediaMode::Spotify;
-
 
 signals:
     void trackChanged();
     void volumeChanged();
     void mediaModeChanged();
+
+private:
+    int m_track;
+    int m_volume;
+    MediaMode m_mediaMode = MediaMode::Spotify;
 
 
 
