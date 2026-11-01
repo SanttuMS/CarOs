@@ -5,9 +5,14 @@ Media::Media(QObject *parent)
 {
 }
 
-int Media::track() const
+bool Media::isPlaying() const
 {
-    return m_track;
+    return m_isPlaying;
+}
+
+QString Media::currentTrack() const
+{
+    return m_currentTrack;
 }
 
 int Media::volume() const
@@ -20,6 +25,34 @@ Media::MediaMode Media::mediaMode() const
     return m_mediaMode;
 }
 
+QString Media::artist() const
+{
+    return m_artist;
+}
+
+void Media::playPause()
+{
+    setPlaying(!m_isPlaying);
+}
+
+void Media::setPlaying(bool isPlaying)
+{
+    if (m_isPlaying == isPlaying)
+        return;
+
+    m_isPlaying = isPlaying;
+    emit playingChanged();
+}
+
+void Media::setCurrentTrack(const QString &currentTrack)
+{
+    if(m_currentTrack == currentTrack)
+        return;
+
+    m_currentTrack = currentTrack;
+    emit currentTrackChanged();
+}
+
 void Media::setVolume(int volume)
 {
     if(m_volume == volume)
@@ -29,15 +62,6 @@ void Media::setVolume(int volume)
     emit volumeChanged();
 }
 
-void Media::setTrack(int track)
-{
-    if(m_track == track)
-        return;
-
-    m_track = track;
-    emit trackChanged();
-}
-
 void Media::setMediaMode(MediaMode mediaMode)
 {
     if(m_mediaMode == mediaMode)
@@ -45,6 +69,15 @@ void Media::setMediaMode(MediaMode mediaMode)
 
     m_mediaMode = mediaMode;
     emit mediaModeChanged();
+}
+
+void Media::setArtist(const QString &artist)
+{
+    if(m_artist == artist)
+        return;
+
+    m_artist = artist;
+    emit artistChanged();
 }
 
 void Media::setTuner()
