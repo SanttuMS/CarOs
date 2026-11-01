@@ -22,6 +22,8 @@ qt_add_executable(appCarOs
     src/media/Media.cpp
     src/navigation/Navigation.cpp
     src/navigation/Navigation.h
+    src/climate/Climate.cpp
+    src/climate/Climate.h
 )
 
 qt_add_qml_module(appCarOs

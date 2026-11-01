@@ -4,6 +4,9 @@
 class Navigation : public QObject
 {
     //QOBJECTS & PROPERTYS
+    Q_OBJECT
+
+    Q_PROPERTY(double marker READ marker WRITE setMarker NOTIFY markerChanged)
 
 
 public:
@@ -13,13 +16,13 @@ public:
 
     //Setters & Getters
     double marker() const;
-    double setMarker(double marker) const;
+    void setMarker(double marker);
 
     double vehicleLatitude() const;
     double vehicleLongitude() const;
 
-    double setVehicleLatitude(double vehicleLatitude) const;
-    double setVehicleLongitude(double vehicleLongitude) const;
+    void setVehicleLatitude(double vehicleLatitude);
+    void setVehicleLongitude(double vehicleLongitude);
 
 
 signals:

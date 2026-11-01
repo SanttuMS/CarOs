@@ -5,6 +5,10 @@
 
 class Climate : public QObject{
 
+    Q_OBJECT
+
+    Q_PROPERTY(double cabinTemperature READ cabinTemperature WRITE setCabinTemperature NOTIFY cabinTemperatureChanged)
+
 
 public:
 
@@ -12,7 +16,7 @@ public:
     explicit Climate(QObject *parent = nullptr);
 
     double cabinTemperature() const;
-    double setCabintemperature() const;
+    void setCabinTemperature(double cabinTemperature);
 
 
 

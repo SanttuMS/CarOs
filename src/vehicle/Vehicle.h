@@ -50,7 +50,7 @@ public:
     void setBatteryLevel(double batteryLevel);
 
     double temperature() const;
-    void setTemperature(double temp);
+    void setTemperature(double temperature);
 
     DriveMode driveMode() const;
     void setDriveMode(DriveMode driveMode);
