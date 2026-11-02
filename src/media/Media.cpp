@@ -35,6 +35,7 @@ void Media::playPause()
     setPlaying(!m_isPlaying);
 }
 
+
 void Media::setPlaying(bool isPlaying)
 {
     if (m_isPlaying == isPlaying)

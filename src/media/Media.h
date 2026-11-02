@@ -37,6 +37,10 @@ public:
     QString currentTrack() const;
     void setCurrentTrack(const QString &currentTrack);
 
+    void nextTrack(const QString &currentTrack);
+    void previousTrack(const QString &currentTrack);
+
+
     int volume() const;
     void setVolume(int volume);
 
@@ -52,25 +56,22 @@ public:
 
 
 
-
-
 signals:
     void currentTrackChanged();
     void volumeChanged();
     void mediaModeChanged();
     void artistChanged();
-    void nextTrack();
-    void previousTrack();
     void playingChanged();
 
 
 private:
-    //int m_track;
+    int m_trackIndex = 0;
     int m_volume = 50;
     bool m_isPlaying = false;
     QString m_artist;
     QString m_currentTrack;
     MediaMode m_mediaMode = MediaMode::Spotify;
+
 
 
 
