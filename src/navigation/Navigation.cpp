@@ -20,6 +20,30 @@ double Navigation::vehicleLongitude() const
     return m_vehicleLongitude;
 }
 
+QString Navigation::destination() const
+{
+    return m_destination;
+}
+
+double Navigation::etaTarget() const
+{
+    return m_etaTarget;
+}
+
+bool Navigation::isNavActive() const
+{
+    return m_isNavActive;
+}
+
+void Navigation::setNav(bool isNavActive)
+{
+    if(m_isNavActive == isNavActive)
+        return;
+
+    m_isNavActive = isNavActive;
+    emit isNavActiveChanged();
+}
+
 void Navigation::setMarker(double marker)
 {
     if(m_marker == marker)
@@ -30,14 +54,6 @@ void Navigation::setMarker(double marker)
 
 }
 
-void Navigation::setNav(bool isNavActive)
-{
-    if (m_isNavActive == isNavActive)
-        return;
-
-    m_isNavActive = isNavActive;
-    emit isNavActiveChanged();
-}
 
 void Navigation::setDestination(const QString &destination)
 {

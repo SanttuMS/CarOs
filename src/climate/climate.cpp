@@ -25,6 +25,11 @@ void Climate::climateOn()
     setClimateOn(!m_isClimateOn);
 }
 
+bool Climate::isClimateOn() const
+{
+    return m_isClimateOn;
+}
+
 void Climate::setCabinTemperature(double cabinTemperature)
 {
     if(m_cabinTemperature == cabinTemperature)
@@ -51,13 +56,22 @@ void Climate::setSeatHeat(bool seatHeat)
     emit seatHeatChanged();
 }
 
-void Climate::setClimateMode(ClimateMode climateMode)
+void Climate::setClimateOn(bool isClimateOn)
 {
-    if(m_driveMode == driveMode)
+    if (m_isClimateOn == isClimateOn)
         return;
 
-    m_driveMode = driveMode;
-    emit driveModeChanged();
+    m_isClimateOn = isClimateOn;
+    emit isClimateOnChanged();
+}
+
+void Climate::setClimateMode(ClimateMode climateMode)
+{
+    if(m_climateMode == climateMode)
+        return;
+
+    m_climateMode = climateMode;
+    emit climateModeChanged();
 }
 
 void Climate::setAuto()
