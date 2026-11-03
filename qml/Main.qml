@@ -13,6 +13,7 @@ ApplicationWindow {
     title: qsTr("CarOs")
 
     property bool lightMode: Application.styleHints.colorScheme === Qt.Light
+    property string currentView: "Dashboard"
     property color reallyDark: "#1f1f1f"
     property color dark: "#262626"
     property color reallyLight: "#e7e7e7"
@@ -37,6 +38,13 @@ ApplicationWindow {
 
             }
 
+            StackLayout {
+                id: layout
+                anchors.fill: parent
+                currentIndex: 1
+
+            }
+
             Button {
                 id: button1
 
@@ -47,6 +55,50 @@ ApplicationWindow {
                 Layout.alignment: Qt.AlignHCenter
 
                 onClicked: window.lightMode = !window.lightMode
+            }
+
+            Button{
+                id: button2
+
+                text: ("Media")
+
+                Layout.alignment: Qt.AlignHCenter
+
+                onClicked: window.currentView = "Media"
+
+            }
+
+            Button{
+                id: button3
+
+                text: ("Navigation")
+
+                Layout.alignment: Qt.AlignHCenter
+
+                onClicked: window.currentView = "Navigation"
+
+            }
+
+            Button{
+                id: button4
+
+                text: ("Climate")
+
+                Layout.alignment: Qt.AlignHCenter
+
+                onClicked: window.currentView = "Climate"
+
+            }
+
+            Button{
+                id: button5
+
+                text: ("Dashboard")
+
+                Layout.alignment: Qt.AlignHCenter
+
+                onClicked: window.currentView = "Dashboard"
+
             }
         }
     }
