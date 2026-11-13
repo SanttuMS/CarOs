@@ -95,3 +95,21 @@ void Media::setSpotify()
 {
     setMediaMode(MediaMode::Spotify);
 }
+
+QString Media::mediaModeText() const
+{
+
+    switch(m_mediaMode){
+    case MediaMode::Tuner:
+        return "TUNER";
+
+    case MediaMode::Spotify:
+        return "SPOTIFY";
+
+    case MediaMode::Bluetooth:
+        return "BLUETOOTH";
+    }
+
+    return "UNKNOWN";
+}
+

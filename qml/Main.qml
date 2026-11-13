@@ -28,22 +28,43 @@ ApplicationWindow {
             anchors.margins: 24
             spacing: 16
 
-            Dashboard{
+            StackLayout {
+                id: stack
                 Layout.fillWidth: true
                 Layout.fillHeight: true
+                currentIndex: 0
 
-                textColor: window.lightmode
-                            ?window.dark
-                            :window.light
+                Dashboard {
+                    textColor: window.lightMode
+                               ? window.dark
+                               : window.light
+                }
 
+                Media {
+                textColor: window.lightMode
+                                ? window.dark
+                                : window.light
+                }
+
+                Navigation {
+                textColor: window.lightMode
+                                ? window.dark
+                                : window.light
+                }
+
+                Climate {
+                textColor: window.lightMode
+                                ? window.dark
+                                : window.light
+
+
+                }
             }
+        }
 
-            StackLayout {
-                id: layout
-                anchors.fill: parent
-                currentIndex: 1
-
-            }
+        RowLayout{
+                Layout.alignment: Qt.AlignHCenter
+                spacing: 12
 
             Button {
                 id: button1
@@ -52,54 +73,45 @@ ApplicationWindow {
                       ? qsTr("\u263D  Dark mode")
                       : qsTr("\u263C  Light mode")
 
-                Layout.alignment: Qt.AlignHCenter
-
                 onClicked: window.lightMode = !window.lightMode
             }
 
             Button{
                 id: button2
 
-                text: ("Media")
+                text: ("Dashboard")
 
-                Layout.alignment: Qt.AlignHCenter
-
-                onClicked: window.currentView = "Media"
+                onClicked: stack.currentIndex = 0
 
             }
 
             Button{
                 id: button3
 
-                text: ("Navigation")
+                text: ("Media")
 
-                Layout.alignment: Qt.AlignHCenter
-
-                onClicked: window.currentView = "Navigation"
+                onClicked: stack.currentIndex = 1
 
             }
 
             Button{
                 id: button4
 
-                text: ("Climate")
+                text: ("Navigation")
 
-                Layout.alignment: Qt.AlignHCenter
-
-                onClicked: window.currentView = "Climate"
+                onClicked: stack.currentIndex = 2
 
             }
 
             Button{
                 id: button5
 
-                text: ("Dashboard")
+                text: ("Climate")
 
-                Layout.alignment: Qt.AlignHCenter
-
-                onClicked: window.currentView = "Dashboard"
-
+                onClicked: stack.currentIndex = 3
             }
         }
     }
 }
+
+

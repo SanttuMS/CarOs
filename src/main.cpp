@@ -23,6 +23,9 @@ int main(int argc, char *argv[])
     vehicle.setTemperature(80.0);
     bool accelerating = true;
 
+    media.setArtist("Lauri Haav");
+    media.setCurrentTrack("Perhonen");
+
 
     QTimer timer;
 
@@ -76,6 +79,7 @@ int main(int argc, char *argv[])
 
     //GIVE QML  OOP "VEHICLE" FOR USE
     engine.rootContext()->setContextProperty("vehicle", &vehicle);
+    engine.rootContext()->setContextProperty("media", &media);
 
     //Loads qml module from
     engine.loadFromModule("CarOs", "Main");

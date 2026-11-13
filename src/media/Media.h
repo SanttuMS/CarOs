@@ -14,6 +14,8 @@ class Media : public QObject
     Q_PROPERTY(MediaMode mediaMode READ mediaMode WRITE setMediaMode NOTIFY mediaModeChanged)
     Q_PROPERTY(QString artist READ artist WRITE setArtist NOTIFY artistChanged)
     Q_PROPERTY(bool isPlaying READ isPlaying WRITE setPlaying NOTIFY playingChanged)
+    Q_PROPERTY(QString mediaModeText READ mediaModeText NOTIFY mediaModeChanged)
+
 
 public:
 
@@ -52,6 +54,8 @@ public:
 
     bool isPlaying() const;
     void setPlaying(bool isPlaying);
+
+    QString mediaModeText() const;
 
 
 
