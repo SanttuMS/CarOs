@@ -9,7 +9,7 @@ Item {
 
     ColumnLayout {
         anchors.centerIn: parent
-        spacing: 16
+        spacing: 12
 
         Text {
             text: "MEDIA"
@@ -28,9 +28,10 @@ Item {
 
         RowLayout{
             Layout.alignment: Qt.AlignHCenter
+            spacing: 12
         Button{
-            text: "Next track: " + media.nextTrack
-            onClicked: media.nextTrack()
+            text: "Previous"
+            onClicked: media.previousTrack()
         }
         Button {
             text: media.isPlaying ? "Pause" : "Play"
@@ -39,8 +40,8 @@ Item {
             onClicked: media.playPause()
         }
         Button{
-            text: "Previous track: " + media.previousTrack
-            onClicked: media.previousTrack()
+            text: "Next"
+            onClicked: media.nextTrack()
         }
     }
         Text {
@@ -65,6 +66,13 @@ Item {
     RowLayout {
         Layout.alignment: Qt.AlignHCenter
         spacing: 12
+
+        Text {
+            text: "Source: " + media.mediaModeText
+            color: root.textColor
+            font.pixelSize: 18
+            Layout.alignment: Qt.AlignHCenter
+        }
 
         Button {
             id: tunerButton
@@ -104,10 +112,9 @@ Item {
                 color: media.mediaModeText === "BLUETOOTH"
                        ? "#f44336"
                        : "#444444"
-                    }
+            }
         }
     }
-    }
 }
-
+}
 

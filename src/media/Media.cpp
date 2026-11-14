@@ -81,6 +81,32 @@ void Media::setArtist(const QString &artist)
     emit artistChanged();
 }
 
+void Media::nextTrack()
+{
+    m_trackIndex++;
+
+    if (m_tracks.isEmpty())
+        return;
+
+    if(m_trackIndex >= m_tracks.size())
+        m_trackIndex = 0;
+
+    setCurrentTrack(m_tracks[m_trackIndex]);
+}
+
+void Media::previousTrack()
+{
+    m_trackIndex--;
+
+    if (m_tracks.isEmpty())
+        return;
+
+    if(m_trackIndex < 0)
+        m_trackIndex = m_tracks.size() - 1;
+
+    setCurrentTrack(m_tracks[m_trackIndex]);
+}
+
 void Media::setTuner()
 {
     setMediaMode(MediaMode::Tuner);

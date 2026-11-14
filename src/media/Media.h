@@ -1,6 +1,7 @@
 #pragma once
 #include <QObject>
 #include <QString>
+#include <QStringList>
 
 
 class Media : public QObject
@@ -32,6 +33,8 @@ public:
     Q_INVOKABLE void setSpotify();
     Q_INVOKABLE void setBluetooth();
     Q_INVOKABLE void playPause();
+    Q_INVOKABLE void nextTrack();
+    Q_INVOKABLE void previousTrack();
 
 
     explicit Media(QObject *parent = nullptr);
@@ -39,8 +42,8 @@ public:
     QString currentTrack() const;
     void setCurrentTrack(const QString &currentTrack);
 
-    void nextTrack(const QString &currentTrack);
-    void previousTrack(const QString &currentTrack);
+    //void nextTrack(const QString &currentTrack);
+    //void previousTrack(const QString &currentTrack);
 
 
     int volume() const;
@@ -60,6 +63,7 @@ public:
 
 
 
+
 signals:
     void currentTrackChanged();
     void volumeChanged();
@@ -70,10 +74,21 @@ signals:
 
 private:
     int m_trackIndex = 0;
+    int m_artistIndex = 0;
+    QStringList m_tracks = {
+        "Perhonen",
+        "Luotathan",
+        "Feimii",
+        "Aino"
+    };
+    QStringList m_artists = {
+        "Lauri Haav",
+    };
     int m_volume = 50;
     bool m_isPlaying = false;
-    QString m_artist;
+    //QString m_artist;
     QString m_currentTrack;
+    QString m_artist;
     MediaMode m_mediaMode = MediaMode::Spotify;
 
 
