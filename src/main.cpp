@@ -6,6 +6,9 @@
 
 #include "vehicle/Vehicle.h"
 #include "media/Media.h"
+#include "climate/Climate.h"
+#include "navigation/Navigation.h"
+
 
 
 int main(int argc, char *argv[])
@@ -14,6 +17,8 @@ int main(int argc, char *argv[])
 
     Vehicle vehicle;
     Media media;
+    Climate climate;
+    Navigation navigation;
 
     QQmlApplicationEngine engine;
 
@@ -80,6 +85,9 @@ int main(int argc, char *argv[])
     //GIVE QML  OOP "VEHICLE" FOR USE
     engine.rootContext()->setContextProperty("vehicle", &vehicle);
     engine.rootContext()->setContextProperty("media", &media);
+    engine.rootContext()->setContextProperty("climate", &climate);
+    engine.rootContext()->setContextProperty("navigation", &navigation);
+
 
     //Loads qml module from
     engine.loadFromModule("CarOs", "Main");
