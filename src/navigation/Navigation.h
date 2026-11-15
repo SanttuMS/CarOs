@@ -14,7 +14,11 @@ class Navigation : public QObject
     Q_PROPERTY(double etaTarget READ etaTarget WRITE setEtaTarget NOTIFY etaTargetChanged)
     Q_PROPERTY(bool isNavActive READ isNavActive WRITE setNav NOTIFY isNavActiveChanged)
 
+
+
 public:
+
+    Q_INVOKABLE void toggleNavigation();
 
 
     explicit Navigation(QObject *parent = nullptr);
@@ -50,8 +54,8 @@ signals:
     void vehicleLongitudeChanged();
 
 private:
-    double m_marker;
-    double m_etaTarget;
+    double m_marker = 0.0;
+    double m_etaTarget = 0.0;
     double m_vehicleLatitude = 60.169;
     double m_vehicleLongitude = 24.93;
     QString m_destination;

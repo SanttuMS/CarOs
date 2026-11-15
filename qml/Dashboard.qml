@@ -55,6 +55,27 @@ Item {
             Layout.alignment: Qt.AlignRight
 
         }
+
+        Label{
+            text: "Song: " + media.currentTrack
+            color: root.textColor
+            font.pixelSize: 20
+            Layout.alignment: Qt.AlignRight
+        }
+
+        Label{
+            text: "Climate: " + climate.cabinTemperature
+            color: root.textColor
+            font.pixelSize: 32
+            Layout.alignment: Qt.AlignHCenter
+        }
+
+        Label{
+            text: "Navigation: " + navigation.destination + navigation.etaTarget
+            color: root.textColor
+            font.pixelSize: 32
+            Layout.alignment: Qt.AlignHCenter
+        }
     }
 
 
@@ -90,6 +111,8 @@ Item {
             font.pixelSize: 32
             Layout.alignment: Qt.AlignHCenter
         }
+
+
 
         RowLayout {
             Layout.alignment: Qt.AlignHCenter

@@ -35,6 +35,11 @@ bool Navigation::isNavActive() const
     return m_isNavActive;
 }
 
+void Navigation::toggleNavigation()
+{
+    setNav(!m_isNavActive);
+}
+
 void Navigation::setNav(bool isNavActive)
 {
     if(m_isNavActive == isNavActive)
