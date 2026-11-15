@@ -25,15 +25,18 @@ public:
 
     Q_ENUM(ClimateMode)
 
+    //Macro that exposes public method to qml
+
     Q_INVOKABLE void toggleClimate();
     Q_INVOKABLE void setAuto();
     Q_INVOKABLE void setManual();
     Q_INVOKABLE void setDefrost();
 
 
-
+    //Constructor
     explicit Climate(QObject *parent = nullptr);
 
+    //Get & Set
     double cabinTemperature() const;
     void setCabinTemperature(double cabinTemperature);
 

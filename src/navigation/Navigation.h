@@ -17,10 +17,11 @@ class Navigation : public QObject
 
 
 public:
+    //Macro that exposes public method to qml
 
     Q_INVOKABLE void toggleNavigation();
 
-
+    //Constructor
     explicit Navigation(QObject *parent = nullptr);
 
     //Setters & Getters
@@ -43,7 +44,7 @@ public:
     void setVehicleLatitude(double vehicleLatitude);
     void setVehicleLongitude(double vehicleLongitude);
 
-    //void setVehicleCoordinates(double vehicleLatitude, double vehicleLongitude);
+
 
 signals:
     void markerChanged();

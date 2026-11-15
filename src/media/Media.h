@@ -29,6 +29,8 @@ public:
     };
     Q_ENUM(MediaMode)
 
+    //Macro that exposes public method to qml
+
     Q_INVOKABLE void setTuner();
     Q_INVOKABLE void setSpotify();
     Q_INVOKABLE void setBluetooth();
@@ -86,7 +88,6 @@ private:
     };
     int m_volume = 50;
     bool m_isPlaying = false;
-    //QString m_artist;
     QString m_currentTrack;
     QString m_artist;
     MediaMode m_mediaMode = MediaMode::Spotify;

@@ -4,9 +4,9 @@ The goal of the project is to practice modern C++, Qt/QML, software architecture
 
 
 
-v0.1 Dashboard
+v0.2 Dashboard
 
-The first milestone focuses on a working vehicle dashboard with a C++ backend connected to a QML user interface.
+The current milestone focused on expanding CarOS from a basic vehicle dashboard into a multi-page automotive infotainment system with C++ backend logic and a better QML user interface.
 
 Features
 
@@ -25,6 +25,18 @@ Features
 - Active drive mode highlighting
 - Light and dark UI modes
 - Automatic QML updates using Qt signals and properties
+- Media Player
+- Media modes:
+  - Tuner
+  - Spotify
+  - Bluetooth
+- Climate controls
+- Climate modes:
+  - Auto
+  - Manual
+  - Defrost
+- Navigation simulation
+-Dashboard summaries
 
 Technologies
 
@@ -52,9 +64,6 @@ Communication between C++ and QML is implemented using:
 
 Future versions may include:
 
-- Media player
-- Climate controls
-- Navigation simulation
 - Vehicle diagnostics
 - CAN bus simulation
 - ECU simulation
@@ -63,4 +72,4 @@ Future versions may include:
 - Improved UI and animations
 
 
-Version 0.1 represents the first functional dashboard prototype.
+Version 0.2 represents the second functional dashboard prototype.
