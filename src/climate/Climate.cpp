@@ -20,7 +20,7 @@ double Climate::cabinTemperature() const
     return m_cabinTemperature;
 }
 
-void Climate::climateOn()
+void Climate::toggleClimate()
 {
     setClimateOn(!m_isClimateOn);
 }
@@ -63,6 +63,9 @@ void Climate::setClimateOn(bool isClimateOn)
 
     m_isClimateOn = isClimateOn;
     emit isClimateOnChanged();
+
+    if(m_isClimateOn)
+        setClimateMode(ClimateMode::Auto);
 }
 
 void Climate::setClimateMode(ClimateMode climateMode)
@@ -87,4 +90,21 @@ void Climate::setManual()
 void Climate::setDefrost()
 {
     setClimateMode(ClimateMode::Defrost);
+}
+
+QString Climate::climateModeText() const
+{
+
+    switch(m_climateMode){
+    case ClimateMode::Auto:
+        return "AUTO";
+
+    case ClimateMode::Manual:
+        return "MANUAL";
+
+    case ClimateMode::Defrost:
+        return "DEFROST";
+    }
+
+    return "UNKNOWN";
 }

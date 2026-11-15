@@ -10,6 +10,7 @@ Item {
     property string currentTime: ""
     property string currentDate: ""
 
+    // To show time and date in dashboard.
     Timer {
         interval: 1000
         running: true

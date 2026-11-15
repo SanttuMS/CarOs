@@ -30,6 +30,11 @@ Item {
             Layout.alignment: Qt.AlignCenter
             spacing: 12
 
+            Button{
+                text: climate.isClimateOn ? "On" : "Off"
+                onClicked: climate.toggleClimate()
+            }
+
             Text{
                 text: "Fan speed: " + climate.fanSpeed
                 color: root.textColor
@@ -49,6 +54,60 @@ Item {
                 onMoved: climate.fanSpeed = Math.round(value)
             }
 
+        }
+
+        RowLayout{
+            Layout.alignment: Qt.AlignCenter
+            spacing: 12
+
+            Button{
+                id: autoButton
+                text: "AUTO"
+                onClicked: climate.setAuto()
+                background: Rectangle {
+                    // corners
+                    radius: 8
+                    // button highligting - condition ? valueIfTrue : valueIfFalse
+                    color: climate.isClimateOn &&
+                            climate.climateModeText === "AUTO"
+                            ? "#4caf50"
+                            : "#444444"
+                }
+
+            }
+
+            Button{
+                id: manualButton
+                text: "MANUAL"
+                onClicked: climate.setManual()
+                background: Rectangle {
+                    // corners
+                    radius: 8
+                    // button highligting - condition ? valueIfTrue : valueIfFalse
+                    color: climate.isClimateOn &&
+                            climate.climateModeText === "MANUAL"
+                            ? "#4caf50"
+                            : "#444444"
+                }
+
+            }
+
+            Button{
+                id: defrostButton
+                text: "DEFROST"
+                onClicked: climate.setDefrost()
+                background: Rectangle {
+                    // corners
+                    radius: 8
+                    // button highligting - condition ? valueIfTrue : valueIfFalse
+                    color: climate.isClimateOn &&
+                            climate.climateModeText === "DEFROST"
+                            ? "#4caf50"
+                            : "#444444"
+                }
+
+
+            }
         }
 
     }

@@ -11,6 +11,7 @@ class Climate : public QObject{
     Q_PROPERTY(bool seatHeat READ seatHeat WRITE setSeatHeat NOTIFY seatHeatChanged)
     Q_PROPERTY(double fanSpeed READ fanSpeed WRITE setFanSpeed NOTIFY fanSpeedChanged)
     Q_PROPERTY(bool isClimateOn READ isClimateOn WRITE setClimateOn NOTIFY isClimateOnChanged)
+    Q_PROPERTY(QString climateModeText READ climateModeText  NOTIFY climateModeChanged)
 
 
 public:
@@ -22,7 +23,9 @@ public:
         Defrost
     };
 
-    Q_INVOKABLE void climateOn();
+    Q_ENUM(ClimateMode)
+
+    Q_INVOKABLE void toggleClimate();
     Q_INVOKABLE void setAuto();
     Q_INVOKABLE void setManual();
     Q_INVOKABLE void setDefrost();
@@ -46,6 +49,8 @@ public:
     ClimateMode climateMode() const;
     void setClimateMode(ClimateMode climateMode);
 
+    QString climateModeText() const;
+
 signals:
     void cabinTemperatureChanged();
     void seatHeatChanged();
@@ -58,7 +63,6 @@ signals:
 private:
     double m_cabinTemperature = 20;
     bool m_seatHeat = false;
-    bool m_climateOn = true;
     int m_fanSpeed = 5;
     bool m_isClimateOn = false;
     ClimateMode m_climateMode = ClimateMode::Auto;
