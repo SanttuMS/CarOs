@@ -22,8 +22,8 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    vehicle.setSpeed(40.0);
-    vehicle.setBatteryLevel(72.0);
+    vehicle.setSpeed(0.0);
+    vehicle.setBatteryLevel(100.0);
     vehicle.setDriveMode(Vehicle::DriveMode::Normal);
     vehicle.setTemperature(80.0);
     bool accelerating = true;
@@ -37,6 +37,9 @@ int main(int argc, char *argv[])
     //Connecting timer to a lambda + logic for vehicle speed
     QObject::connect(&timer, &QTimer::timeout, [&vehicle, &accelerating]()
     {
+        if (!vehicle.isPoweredOn())
+            return;
+
         //vehicle.setSpeed(vehicle.speed() + 5.0);
         if(accelerating && vehicle.driveMode() == Vehicle::DriveMode::Eco)
             vehicle.setSpeed(vehicle.speed() + 2.0);
@@ -62,6 +65,9 @@ int main(int argc, char *argv[])
     //Setting timer and logic for drain battery level according to drivemode
     QObject::connect(&timer, &QTimer::timeout, [&vehicle, &accelerating]()
     {
+        if (!vehicle.isPoweredOn())
+            return;
+
         if(accelerating && vehicle.driveMode() == Vehicle::DriveMode::Eco)
             vehicle.setBatteryLevel(vehicle.batteryLevel() - 0.6);
 

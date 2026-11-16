@@ -6,7 +6,7 @@ import QtQuick.Controls.Basic
 ApplicationWindow {
     id: window
     width: 1240
-    height: 680
+    height: 780
     minimumWidth: 400
     minimumHeight: 300
     visible: true
@@ -74,6 +74,7 @@ ApplicationWindow {
                       : qsTr("\u263C  Light mode")
 
                 onClicked: window.lightMode = !window.lightMode
+                visible: vehicle.isPoweredOn
             }
 
             Button{
@@ -82,6 +83,7 @@ ApplicationWindow {
                 text: ("Dashboard")
 
                 onClicked: stack.currentIndex = 0
+                visible: vehicle.isPoweredOn
 
             }
 
@@ -91,6 +93,7 @@ ApplicationWindow {
                 text: ("Media")
 
                 onClicked: stack.currentIndex = 1
+                visible: vehicle.isPoweredOn
 
             }
 
@@ -100,6 +103,7 @@ ApplicationWindow {
                 text: ("Navigation")
 
                 onClicked: stack.currentIndex = 2
+                visible: vehicle.isPoweredOn
 
             }
 
@@ -109,6 +113,7 @@ ApplicationWindow {
                 text: ("Climate")
 
                 onClicked: stack.currentIndex = 3
+                visible: vehicle.isPoweredOn
             }
         }
     }

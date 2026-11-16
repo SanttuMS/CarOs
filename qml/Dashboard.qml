@@ -84,6 +84,7 @@ Item {
                 spacing: 18
 
 
+
                 Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 100
@@ -107,6 +108,7 @@ Item {
                             color: root.textColor
                             font.pixelSize: 30
                             font.bold: true
+                            visible: vehicle.isPoweredOn
                         }
                     }
                 }
@@ -135,6 +137,7 @@ Item {
                             color: root.textColor
                             font.pixelSize: 30
                             font.bold: true
+                            visible: vehicle.isPoweredOn
                         }
                     }
                 }
@@ -165,6 +168,7 @@ Item {
                             color: root.textColor
                             font.pixelSize: 20
                             font.bold: true
+                            visible: vehicle.isPoweredOn
                         }
 
                         Label {
@@ -172,6 +176,7 @@ Item {
                             color: root.textColor
                             font.pixelSize: 14
                             opacity: 0.7
+                            visible: vehicle.isPoweredOn
                         }
                     }
                 }
@@ -200,6 +205,7 @@ Item {
                             color: root.textColor
                             font.pixelSize: 20
                             font.bold: true
+                            visible: vehicle.isPoweredOn
                         }
 
                         Label {
@@ -209,6 +215,7 @@ Item {
                             color: root.textColor
                             font.pixelSize: 14
                             opacity: 0.7
+                            visible: vehicle.isPoweredOn
                         }
                     }
                 }
@@ -239,6 +246,7 @@ Item {
                             color: root.textColor
                             font.pixelSize: 20
                             font.bold: true
+                            visible: vehicle.isPoweredOn
                         }
 
                         Label {
@@ -248,6 +256,7 @@ Item {
                             color: root.textColor
                             font.pixelSize: 14
                             opacity: 0.7
+                            visible: vehicle.isPoweredOn
                         }
                     }
                 }
@@ -261,6 +270,18 @@ Item {
 
                 Layout.alignment: Qt.AlignCenter
                 spacing: 18
+
+                Button {
+                    text: vehicle.isPoweredOn ? "Power OFF" : "Power ON"
+                    onClicked: vehicle.togglePower()
+                    Layout.alignment: Qt.AlignCenter
+                    background: Rectangle {
+                        radius: 8
+
+
+
+                    }
+                }
 
 
                 Item {
@@ -346,12 +367,15 @@ Item {
                                    : "#444444"
                         }
                     }
+
                 }
 
 
                 Item {
                     Layout.fillHeight: true
                 }
+
+
             }
         }
     }

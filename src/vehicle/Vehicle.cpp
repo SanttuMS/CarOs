@@ -5,6 +5,25 @@ Vehicle::Vehicle(QObject *parent)
 {
 }
 
+bool Vehicle::isPoweredOn() const
+{
+    return m_isPoweredOn;
+}
+
+void Vehicle::setPoweredOn(bool poweredOn)
+{
+    if (m_isPoweredOn == poweredOn)
+        return;
+
+    m_isPoweredOn = poweredOn;
+    emit poweredOnChanged();
+}
+
+void Vehicle::togglePower()
+{
+    setPoweredOn(!m_isPoweredOn);
+}
+
 double Vehicle::speed() const
 {
     return m_speed;
@@ -15,18 +34,18 @@ double Vehicle::batteryLevel() const
     return m_batteryLevel;
 }
 
-double Vehicle::temperature() const
+double Vehicle::motorTemperature() const
 {
-    return m_temperature;
+    return m_motorTemperature;
 }
 
-void Vehicle::setTemperature(double temperature)
+void Vehicle::setTemperature(double motorTemperature)
 {
-    if(m_temperature == temperature)
+    if(m_motorTemperature == motorTemperature)
         return;
 
-    m_temperature = temperature;
-    emit temperatureChanged();
+    m_motorTemperature = motorTemperature;
+    emit motorTemperatureChanged();
 }
 
 void Vehicle::setSpeed(double speed)
