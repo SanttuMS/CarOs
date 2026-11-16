@@ -36,7 +36,7 @@ Features
   - Manual
   - Defrost
 - Navigation simulation
--Dashboard summaries
+- Dashboard summaries
 
 Technologies
 
