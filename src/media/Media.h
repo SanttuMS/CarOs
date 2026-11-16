@@ -78,13 +78,13 @@ private:
     int m_trackIndex = 0;
     int m_artistIndex = 0;
     QStringList m_tracks = {
-        "Perhonen",
-        "Luotathan",
-        "Feimii",
-        "Aino"
+        "Killers",
+        "Dance of Death",
+        "Powerslave",
+        "Blood Brothers"
     };
     QStringList m_artists = {
-        "Lauri Haav",
+        "Iron Maiden",
     };
     int m_volume = 50;
     bool m_isPlaying = false;

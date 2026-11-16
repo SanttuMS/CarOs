@@ -31,7 +31,7 @@ Item {
             spacing: 12
 
             Button{
-                text: climate.isClimateOn ? "On" : "Off"
+                text: climate.isClimateOn ? "Off" : "On"
                 onClicked: climate.toggleClimate()
             }
 

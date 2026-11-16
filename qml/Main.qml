@@ -66,19 +66,9 @@ ApplicationWindow {
                 Layout.alignment: Qt.AlignHCenter
                 spacing: 12
 
-            Button {
-                id: button1
-
-                text: window.lightMode
-                      ? qsTr("\u263D  Dark mode")
-                      : qsTr("\u263C  Light mode")
-
-                onClicked: window.lightMode = !window.lightMode
-                visible: vehicle.isPoweredOn
-            }
 
             Button{
-                id: button2
+                id: button1
 
                 text: ("Dashboard")
 
@@ -88,7 +78,7 @@ ApplicationWindow {
             }
 
             Button{
-                id: button3
+                id: button2
 
                 text: ("Media")
 
@@ -98,7 +88,7 @@ ApplicationWindow {
             }
 
             Button{
-                id: button4
+                id: button3
 
                 text: ("Navigation")
 
@@ -108,7 +98,7 @@ ApplicationWindow {
             }
 
             Button{
-                id: button5
+                id: button4
 
                 text: ("Climate")
 
@@ -117,6 +107,6 @@ ApplicationWindow {
             }
         }
     }
-}
 
+}
 

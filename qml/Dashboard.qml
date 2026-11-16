@@ -126,14 +126,14 @@ Item {
                         anchors.margins: 14
 
                         Label {
-                            text: "VEHICLE TEMPERATURE"
+                            text: "MOTOR TEMPERATURE"
                             color: root.textColor
                             font.pixelSize: 14
                             opacity: 0.7
                         }
 
                         Label {
-                            text: vehicle.temperature + " °C"
+                            text: vehicle.motorTemperature + " °C"
                             color: root.textColor
                             font.pixelSize: 30
                             font.bold: true
@@ -162,9 +162,7 @@ Item {
                         }
 
                         Label {
-                            text: media.currentTrack === ""
-                                  ? "No track"
-                                  : media.currentTrack
+                            text: media.artist + " - " + media.currentTrack
                             color: root.textColor
                             font.pixelSize: 20
                             font.bold: true
@@ -267,8 +265,6 @@ Item {
             ColumnLayout {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-
-                Layout.alignment: Qt.AlignCenter
                 spacing: 18
 
                 Button {
@@ -277,9 +273,9 @@ Item {
                     Layout.alignment: Qt.AlignCenter
                     background: Rectangle {
                         radius: 8
-
-
-
+                    color: vehicle.isPoweredOn ? "Power OFF" : "Power ON"
+                           ? "#2196f3"
+                           : "#444444"
                     }
                 }
 
