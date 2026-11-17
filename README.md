@@ -23,7 +23,6 @@ Features
 - Current date and time
 - Interactive drive mode selection
 - Active drive mode highlighting
-- Light and dark UI modes
 - Automatic QML updates using Qt signals and properties
 - Media Player
 - Media modes:
@@ -35,7 +34,7 @@ Features
   - Auto
   - Manual
   - Defrost
-- Navigation simulation
+- Navigation simulation(Map with markers coming later)
 - Dashboard summaries
 
 Technologies
