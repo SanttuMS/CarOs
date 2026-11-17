@@ -25,6 +25,7 @@ class Vehicle : public QObject
     Q_PROPERTY(double tirePressureRearRight READ tirePressureRearRight WRITE setTirePressureRearRight NOTIFY tirePressureRearRightChanged)
     Q_PROPERTY(double odometer READ odometer WRITE setOdometer NOTIFY odometerChanged)
     Q_PROPERTY(double oilLevel READ oilLevel WRITE setOilLevel NOTIFY oilLevelChanged)
+    Q_PROPERTY(QString washerFluid READ washerFluid WRITE setWasherFluid NOTIFY washerFluidLevelChanged)
 
 
 public:
@@ -99,6 +100,9 @@ public:
     double oilLevel() const;
     void setOilLevel(double oilLevel);
 
+    QString washerFluid() const;
+    void setWasherFluid(const QString &washerFluid);
+
 
 
 
@@ -122,6 +126,7 @@ signals:
     void odometerChanged();
     void oilLevelChanged();
     void coolantLevelChanged();
+    void washerFluidLevelChanged();
 
 private:
     bool m_isPoweredOn = false;
@@ -138,6 +143,7 @@ private:
     double m_tirePressureFrontRight = 2.4;
     double m_tirePressureRearLeft = 2.3;
     double m_tirePressureRearRight = 2.3;
+    QString m_washerFluid = "Low";
 
 
 };

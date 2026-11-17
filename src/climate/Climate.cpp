@@ -10,14 +10,41 @@ int Climate::fanSpeed() const
     return m_fanSpeed;
 }
 
+
+void Climate::setFanSpeed(double fanSpeed)
+{
+    if(m_fanSpeed == fanSpeed)
+        return;
+    m_fanSpeed = fanSpeed;
+    emit fanSpeedChanged();
+}
+
 bool Climate::seatHeat() const
 {
     return m_seatHeat;
 }
 
+void Climate::setSeatHeat(bool seatHeat)
+{
+    if(m_seatHeat == seatHeat)
+        return;
+
+    m_seatHeat = seatHeat;
+    emit seatHeatChanged();
+}
+
 double Climate::cabinTemperature() const
 {
     return m_cabinTemperature;
+}
+
+void Climate::setCabinTemperature(double cabinTemperature)
+{
+    if(m_cabinTemperature == cabinTemperature)
+        return;
+
+    m_cabinTemperature = cabinTemperature;
+    emit cabinTemperatureChanged();
 }
 
 void Climate::toggleClimate()
@@ -30,31 +57,6 @@ bool Climate::isClimateOn() const
     return m_isClimateOn;
 }
 
-void Climate::setCabinTemperature(double cabinTemperature)
-{
-    if(m_cabinTemperature == cabinTemperature)
-        return;
-
-    m_cabinTemperature = cabinTemperature;
-    emit cabinTemperatureChanged();
-}
-
-void Climate::setFanSpeed(double fanSpeed)
-{
-    if(m_fanSpeed == fanSpeed)
-        return;
-    m_fanSpeed = fanSpeed;
-    emit fanSpeedChanged();
-}
-
-void Climate::setSeatHeat(bool seatHeat)
-{
-    if(m_seatHeat == seatHeat)
-        return;
-
-    m_seatHeat = seatHeat;
-    emit seatHeatChanged();
-}
 
 void Climate::setClimateOn(bool isClimateOn)
 {
@@ -66,6 +68,11 @@ void Climate::setClimateOn(bool isClimateOn)
 
     if(m_isClimateOn)
         setClimateMode(ClimateMode::Auto);
+}
+
+Climate::ClimateMode Climate::climateMode() const
+{
+    return m_climateMode;
 }
 
 void Climate::setClimateMode(ClimateMode climateMode)

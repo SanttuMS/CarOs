@@ -142,6 +142,20 @@ void Vehicle::setOilLevel(double oilLevel)
     emit oilLevelChanged();
 }
 
+QString Vehicle::washerFluid() const
+{
+    return m_washerFluid;
+}
+
+void Vehicle::setWasherFluid(const QString &washerFluid)
+{
+    if(m_washerFluid == washerFluid)
+        return;
+
+    m_washerFluid = washerFluid;
+    emit washerFluidLevelChanged();
+}
+
 double Vehicle::tirePressureFrontLeft() const
 {
     return m_tirePressureFrontLeft;

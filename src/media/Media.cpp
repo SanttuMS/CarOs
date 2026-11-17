@@ -10,31 +10,10 @@ bool Media::isPlaying() const
     return m_isPlaying;
 }
 
-QString Media::currentTrack() const
-{
-    return m_currentTrack;
-}
-
-int Media::volume() const
-{
-    return m_volume;
-}
-
-Media::MediaMode Media::mediaMode() const
-{
-    return m_mediaMode;
-}
-
-QString Media::artist() const
-{
-    return m_artist;
-}
-
 void Media::playPause()
 {
     setPlaying(!m_isPlaying);
 }
-
 
 void Media::setPlaying(bool isPlaying)
 {
@@ -45,6 +24,11 @@ void Media::setPlaying(bool isPlaying)
     emit playingChanged();
 }
 
+QString Media::currentTrack() const
+{
+    return m_currentTrack;
+}
+
 void Media::setCurrentTrack(const QString &currentTrack)
 {
     if(m_currentTrack == currentTrack)
@@ -52,33 +36,6 @@ void Media::setCurrentTrack(const QString &currentTrack)
 
     m_currentTrack = currentTrack;
     emit currentTrackChanged();
-}
-
-void Media::setVolume(int volume)
-{
-    if(m_volume == volume)
-        return;
-
-    m_volume = volume;
-    emit volumeChanged();
-}
-
-void Media::setMediaMode(MediaMode mediaMode)
-{
-    if(m_mediaMode == mediaMode)
-        return;
-
-    m_mediaMode = mediaMode;
-    emit mediaModeChanged();
-}
-
-void Media::setArtist(const QString &artist)
-{
-    if(m_artist == artist)
-        return;
-
-    m_artist = artist;
-    emit artistChanged();
 }
 
 void Media::nextTrack()
@@ -108,6 +65,50 @@ void Media::previousTrack()
 
     setCurrentTrack(m_tracks[m_trackIndex]);
 }
+
+int Media::volume() const
+{
+    return m_volume;
+}
+
+void Media::setVolume(int volume)
+{
+    if(m_volume == volume)
+        return;
+
+    m_volume = volume;
+    emit volumeChanged();
+}
+
+Media::MediaMode Media::mediaMode() const
+{
+    return m_mediaMode;
+}
+
+void Media::setMediaMode(MediaMode mediaMode)
+{
+    if(m_mediaMode == mediaMode)
+        return;
+
+    m_mediaMode = mediaMode;
+    emit mediaModeChanged();
+}
+
+QString Media::artist() const
+{
+    return m_artist;
+}
+
+void Media::setArtist(const QString &artist)
+{
+    if(m_artist == artist)
+        return;
+
+    m_artist = artist;
+    emit artistChanged();
+}
+
+
 
 void Media::setTuner()
 {
