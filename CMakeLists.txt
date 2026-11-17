@@ -34,6 +34,8 @@ qt_add_qml_module(appCarOs
         qml/Climate.qml
         qml/Media.qml
         qml/Navigation.qml
+
+
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
