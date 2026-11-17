@@ -83,10 +83,11 @@ void Media::setArtist(const QString &artist)
 
 void Media::nextTrack()
 {
-    m_trackIndex++;
-
     if (m_tracks.isEmpty())
         return;
+
+    m_trackIndex++;
+
 
     if(m_trackIndex >= m_tracks.size())
         m_trackIndex = 0;
@@ -96,10 +97,11 @@ void Media::nextTrack()
 
 void Media::previousTrack()
 {
-    m_trackIndex--;
-
     if (m_tracks.isEmpty())
         return;
+
+    m_trackIndex--;
+
 
     if(m_trackIndex < 0)
         m_trackIndex = m_tracks.size() - 1;

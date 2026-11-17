@@ -44,9 +44,6 @@ public:
     QString currentTrack() const;
     void setCurrentTrack(const QString &currentTrack);
 
-    //void nextTrack(const QString &currentTrack);
-    //void previousTrack(const QString &currentTrack);
-
 
     int volume() const;
     void setVolume(int volume);

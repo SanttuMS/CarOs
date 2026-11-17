@@ -16,7 +16,15 @@ class Vehicle : public QObject
     Q_PROPERTY(double batteryLevel READ batteryLevel WRITE setBatteryLevel NOTIFY batteryLevelChanged)
     Q_PROPERTY(DriveMode driveMode READ driveMode WRITE setDriveMode NOTIFY driveModeChanged)
     Q_PROPERTY(QString driveModeText READ driveModeText NOTIFY driveModeChanged)
-    Q_PROPERTY(double motorTemperature READ motorTemperature WRITE setTemperature NOTIFY motorTemperatureChanged)
+    Q_PROPERTY(double motorTemperature READ motorTemperature WRITE setMotorTemperature NOTIFY motorTemperatureChanged)
+    Q_PROPERTY(double batteryVoltage READ batteryVoltage WRITE setBatteryVoltage NOTIFY batteryVoltageChanged)
+    Q_PROPERTY(double coolantLevel READ coolantLevel WRITE setCoolantLevel NOTIFY coolantLevelChanged)
+    Q_PROPERTY(double tirePressureFrontLeft READ tirePressureFrontLeft WRITE setTirePressureFrontLeft NOTIFY tirePressureFrontLeftChanged)
+    Q_PROPERTY(double tirePressureFrontRight READ tirePressureFrontRight WRITE setTirePressureFrontRight NOTIFY tirePressureFrontRightChanged)
+    Q_PROPERTY(double tirePressureRearLeft READ tirePressureRearLeft WRITE setTirePressureRearLeft NOTIFY tirePressureRearLeftChanged)
+    Q_PROPERTY(double tirePressureRearRight READ tirePressureRearRight WRITE setTirePressureRearRight NOTIFY tirePressureRearRightChanged)
+    Q_PROPERTY(double odometer READ odometer WRITE setOdometer NOTIFY odometerChanged)
+    Q_PROPERTY(double oilLevel READ oilLevel WRITE setOilLevel NOTIFY oilLevelChanged)
 
 
 public:
@@ -56,7 +64,7 @@ public:
     void setBatteryLevel(double batteryLevel);
 
     double motorTemperature() const;
-    void setTemperature(double temperature);
+    void setMotorTemperature(double motorTemperature);
 
     DriveMode driveMode() const;
     void setDriveMode(DriveMode driveMode);

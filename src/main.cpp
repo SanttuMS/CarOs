@@ -25,11 +25,11 @@ int main(int argc, char *argv[])
     vehicle.setSpeed(0.0);
     vehicle.setBatteryLevel(100.0);
     vehicle.setDriveMode(Vehicle::DriveMode::Normal);
-    vehicle.setTemperature(80.0);
+    vehicle.setMotorTemperature(80.0);
     bool accelerating = true;
 
-    media.setArtist("Lauri Haav");
-    media.setCurrentTrack("Perhonen");
+    media.setCurrentTrack("Dance of Death");
+    media.setArtist("Iron Maiden");
 
 
     QTimer timer;
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
 
 
 
-    //GIVE QML  OOP "VEHICLE" FOR USE
+    //GIVE QML class FOR USE
     engine.rootContext()->setContextProperty("vehicle", &vehicle);
     engine.rootContext()->setContextProperty("media", &media);
     engine.rootContext()->setContextProperty("climate", &climate);
