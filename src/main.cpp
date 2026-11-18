@@ -69,13 +69,13 @@ int main(int argc, char *argv[])
             return;
 
         if(accelerating && vehicle.driveMode() == Vehicle::DriveMode::Eco)
-            vehicle.setBatteryLevel(vehicle.batteryLevel() - 0.6);
+            vehicle.setBatteryLevel(vehicle.batteryLevel() - 0.2);
 
         else if(accelerating && vehicle.driveMode() == Vehicle::DriveMode::Normal)
-            vehicle.setBatteryLevel(vehicle.batteryLevel() - 0.8);
+            vehicle.setBatteryLevel(vehicle.batteryLevel() - 0.4);
 
         else if(accelerating && vehicle.driveMode() == Vehicle::DriveMode::Sport)
-            vehicle.setBatteryLevel(vehicle.batteryLevel() - 1.0);
+            vehicle.setBatteryLevel(vehicle.batteryLevel() - 0.6);
 
         else
             vehicle.setBatteryLevel(vehicle.batteryLevel() + 0.2);
