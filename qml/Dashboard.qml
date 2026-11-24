@@ -126,14 +126,14 @@ Item {
                         anchors.margins: 14
 
                         Label {
-                            text: "MOTOR TEMPERATURE"
+                            text: "ODOMETER"
                             color: root.textColor
                             font.pixelSize: 14
                             opacity: 0.7
                         }
 
                         Label {
-                            text: vehicle.motorTemperature + " °C"
+                            text: vehicle.odometer + "KM"
                             color: root.textColor
                             font.pixelSize: 30
                             font.bold: true

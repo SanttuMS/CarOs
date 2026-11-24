@@ -33,6 +33,7 @@ public:
     bool batteryVoltageLow() const;
     int faultCount() const;
     bool motorTemperatureHigh() const;
+    double coolantTemperature() const;
 
     bool tirePressureFrontLeftLow() const;
     bool tirePressureFrontLeftHigh() const;
@@ -62,6 +63,8 @@ private:
     double m_maxMotorTemperature = 110;
     double m_maxCoolantTemperature = 105;
     double m_minBatteryVoltage = 11.5;
+    int m_faultCount = 0;
+    bool m_batteryVoltageLow = false;
 
 
 

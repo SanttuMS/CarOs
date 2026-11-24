@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
     vehicle.setBatteryLevel(100.0);
     vehicle.setDriveMode(Vehicle::DriveMode::Normal);
     vehicle.setMotorTemperature(80.0);
+    vehicle.setOdometer(20000);
     bool accelerating = true;
 
     media.setCurrentTrack("Dance of Death");
